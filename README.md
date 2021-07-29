@@ -10,10 +10,10 @@
 
 ### Description
 Book Search Engine is a MERN stack web app that lets users search for books and save them to their profile for later. The application originally used API to grab data, but it was reformatted to use GraphQL queries and mutations. 
-![screenshot]()
+![screenshot](https://i.imgur.com/YRyg76Q.png)
 
 ### Usage
-To use this app, simply go to the deployed [link](https://protected-spire-10586.herokuapp.com/)
+To use this app, simply go to the deployed [link](https://drez-book-search.herokuapp.com/)
 
 ### Contribution
 If you would like to contribute to this project my contact information can be found at the bottom of this file
