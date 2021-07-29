@@ -6,18 +6,18 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({__id: context.user._id}).select('-__v -password')
+        return User.findOne({__id: context.user._id}).populate('savedBooks')
       }
       throw new AuthError('You need to log in.')
     },
   },
 
   Mutation: {
-    addUser: async (parent, args) => {
-      const newUser = await User.create(args)
+    addUser: async (parent, { username, email, password }) => {
+      const newUser = await User.create({username, email, password})
       const token = signToken(newUser)
 
-      return { token, newUser}
+      return { token, user: newUser }
     },
 
     login: async (parent, { email, password }) => {
